@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>消灭福寿螺</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 添加视口元标签以优化移动设备显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 得分图案和分数显示 -->
+        <img src="得分.png" id="score-label" alt="得分">
+        <div id="score">0</div>
+        
+        <!-- 时间图案和时间显示 -->
+        <img src="时间.png" id="timer-label" alt="时间">
+        <div id="timer">60s</div>
+
+        <!-- 排行榜按钮图案 -->
+        <img src="排行榜.png" id="leaderboard-button" alt="排行榜">
+        
+        <!-- Holes where moles appear -->
+        <div class="hole" id="hole1"></div>
+        <div class="hole" id="hole2"></div>
+        <div class="hole" id="hole3"></div>
+        <div class="hole" id="hole4"></div>
+        <div class="hole" id="hole5"></div>
+        <div class="hole" id="hole6"></div>
+        <div class="hole" id="hole7"></div>
+        <div class="hole" id="hole8"></div>
+        <div class="hole" id="hole9"></div>
+
+        <!-- Hammer follows the cursor -->
+        <img src="hammer_up.png" id="hammer" alt="Hammer">
+
+        <!-- Start and Exit buttons -->
+        <img src="startbutton.png" id="start-button" alt="Start">
+        <img src="exitbutton.png" id="exit-button" alt="Exit">
+       
+
+        <!-- Leaderboard -->
+        <div id="leaderboard" class="hidden">
+           
+            <div id="leaderboard-content">
+                <h2> </h2>
+                <ul id="leaderboard-list">
+                    <!-- 动态插入排名 -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Name Input Modal -->
+        <div id="name-modal" class="none">
+            <div class="modal-content">
+                <h2>游戏结束！请输入你的姓名</h2>
+                <input type="text" id="player-name" placeholder="姓名">
+                <button id="submit-score">提交</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 音频元素 -->
+    <audio id="background-music" src="background.mp3" loop></audio>
+    <audio id="hit-sound" src="hit.mp3"></audio>
+    <audio id="miss-sound" src="miss.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

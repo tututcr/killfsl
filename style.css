@@ -1,0 +1,225 @@
+
+/* style.css */
+
+/* 通用重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: none; /* 隐藏默认鼠标光标 */
+    background-color: #000; /* 背景颜色以填充空白区域 */
+}
+
+/* 父容器使用 flexbox 居中游戏容器 */
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 704px; /* 最大宽度 */
+    height: 100%;
+    max-height: 1408px; /* 最大高度 */
+    margin: auto;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* 得分图案 */
+#score-label {
+    position: absolute;
+    top: 0%;
+    left: 7.8125%; /* 100px / 1280px = 7.8125% */
+    width: 20vw; /* 173px / 1280px * 100 = 13.5156vw */
+    height: auto;
+    z-index: 900;
+}
+
+/* 分数显示 */
+#score {
+    position: absolute;
+    top: 3.2%; /* 相对于容器高度的百分比 */
+    left: 20.5%; /* 220px / 1280px = 17.1875% + 3.125% 间距 */
+    color: white;
+    font-size: 4.5vw; /* 相对于视口宽度 */
+    z-index: 900;
+}
+
+/* 时间图案 */
+#timer-label {
+    position: absolute;
+    top: 0%;
+    left: 39.0625%; /* 500px / 1280px = 39.0625% */
+    width: 20vw; /* 173px / 1280px * 100 = 13.5156vw */
+    height: auto;
+    z-index: 900;
+}
+
+/* 时间显示 */
+#timer {
+    position: absolute;
+    top: 3.2%;
+    left: 50.2%; /* 600px / 1280px = 46.875% - 根据实际间距调整 */
+    color: white;
+    font-size: 4.5vw;
+    z-index: 900;
+}
+
+/* 排行榜按钮图案 */
+#leaderboard-button {
+    position: absolute;
+    top: 0%;
+    right: 10%; /* 200px / 1280px = 15.625% */
+    width: 20vw; /* 173px / 1280px * 100 = 13.5156vw */
+    height: auto;
+    cursor: pointer;
+    z-index: 500;
+}
+
+/* Holes样式 */
+.hole {
+    position: absolute;
+    width: 7.8125vw; /* 100px / 1280px * 100 = 7.8125vw */
+    height: 13.3333vh; /* 100px / 720px * 100 = 13.8889vh */
+    background-color: transparent;
+    /* 示例位置，可以根据实际需求调整 */
+}
+
+#hole1 { top: 13.8889vh; left: 15.625vw; }
+#hole2 { top: 13.8889vh; left: 31.25vw; }
+#hole3 { top: 13.8889vh; left: 46.875vw; }
+#hole4 { top: 41.6667vh; left: 15.625vw; }
+#hole5 { top: 41.6667vh; left: 31.25vw; }
+#hole6 { top: 41.6667vh; left: 46.875vw; }
+#hole7 { top: 69.4444vh; left: 15.625vw; }
+#hole8 { top: 69.4444vh; left: 31.25vw; }
+#hole9 { top: 69.4444vh; left: 46.875vw; }
+
+/* Mole样式 */
+.mole {
+    position: absolute;
+    width: 20vw; /* 100px / 1280px * 100 = 7.8125vw */
+    height: auto; /* 108px / 720px * 100 = 15vh */
+    user-select: none;
+    cursor: pointer; /* 更改鼠标指针样式 */
+}
+
+/* Hammer样式 */
+#hammer {
+    position: absolute;
+    width: 15vw; /* 75px / 1280px * 100 = 5.8594vw */
+    height: auto; /* 75px / 720px * 100 = 10.4167vh */
+    pointer-events: none; /* 不阻止鼠标事件 */
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* 确保锤子在最前面 */
+}
+
+/* 按钮样式 */
+#start-button, #exit-button {
+    position: absolute;
+    width: 20vw; /* 201px / 1280px * 100 = 15.7031vw */
+    height: auto; /* 197px / 720px * 100 = 27.3611vh */
+    cursor: pointer;
+    z-index: 500; /* 确保按钮在适当层级 */
+}
+
+/* 开始按钮 */
+#start-button {
+    bottom: 0;
+    left: 6.5625vw; /* 20px / 1280px * 100 = 1.5625vw */
+}
+
+/* 退出按钮 */
+#exit-button {
+    bottom: 0;
+    right: 6.5625vw; /* 20px / 1280px * 100 = 1.5625vw */
+}
+
+/* Leaderboard样式 */
+#leaderboard {
+    position: absolute;
+    top: 8.3333vh; /* 60px / 720px * 100 = 8.3333vh */
+    right: 17.1875vw; /* 220px / 1280px * 100 = 17.1875vw */
+    width: 17.3438vw; /* 222px / 1280px * 100 ≈ 17.3438vw */
+    height: 61.6667vh; /* 444px / 720px * 100 = 61.6667vh */
+    display: none; /* 初始隐藏 */
+    z-index: 600;
+}
+
+
+
+#leaderboard-content {
+    position: absolute;
+    width: 21.875vw; /* 280px / 1280px * 100 = 21.875vw */
+    height: 80.5556vh; /* 580px / 720px * 100 ≈ 80.5556vh */
+    top: -2vh; /* 50px / 720px * 100 ≈ 6.9444vh */
+    left: 1vw; /* 10px / 1280px * 100 ≈ 0.7813vw */
+    overflow-y: auto;
+    color: white;
+    text-align: center;
+}
+
+#leaderboard-content h2 {
+    margin-top: 2.7778vh; /* 20px / 720px * 100 ≈ 2.7778vh */
+    font-size: 3vw;
+}
+
+#leaderboard-list {
+    list-style: none;
+    margin-top: 2.7778vh; /* 20px / 720px * 100 ≈ 2.7778vh */
+    padding: 0;
+}
+
+#leaderboard-list li {
+    margin: 1.3889vh 0; /* 10px / 720px * 100 ≈ 1.3889vh */
+    font-size: 1.vw; /* 24px / 1280px * 100 ≈ 1.875vw */
+}
+
+/* Name Modal样式 */
+#name-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* 初始隐藏 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.modal-content {
+    background: #333;
+    padding: 2.7778vh; /* 20px / 720px * 100 ≈ 2.7778vh */
+    border-radius: 1.3889vh; /* 10px / 720px * 100 ≈ 1.3889vh */
+    text-align: center;
+    color: white;
+    width: 55.2083vw; /* 800px / 1280px * 100 ≈ 62.5vw */
+    max-width: 400px;
+}
+
+#name-modal input {
+    padding: 1.3889vh; /* 10px / 720px * 100 ≈ 1.3889vh */
+    font-size: 1.25vw; /* 18px / 1280px * 100 ≈ 1.4063vw */
+    margin-top: 1.3889vh; /* 10px / 720px * 100 ≈ 1.3889vh */
+    width: 80%;
+}
+
+#name-modal button {
+    padding: 1.3889vh 2.0833vw; /* 10px / 720px * 100 ≈ 1.3889vh, 25px / 1280px * 100 ≈ 1.9531vw */
+    font-size: 1.25vw; /* 18px / 1280px * 100 ≈ 1.4063vw */
+    margin-top: 2.7778vh; /* 20px / 720px * 100 ≈ 2.7778vh */
+    cursor: pointer;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
