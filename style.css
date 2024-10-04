@@ -87,7 +87,10 @@ body, html {
     width: 7.8125vw; /* 100px / 1280px * 100 = 7.8125vw */
     height: 13.3333vh; /* 100px / 720px * 100 = 13.8889vh */
     background-color: transparent;
-    /* 示例位置，可以根据实际需求调整 */
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* 防止点击后的高亮效果 */
+    box-shadow: none;
 }
 
 #hole1 { top: 13.8889vh; left: 15.625vw; }
@@ -112,6 +115,8 @@ body, html {
     border: none;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation; /* 防止可能的手势操作引起的边框 */
+    box-shadow: none; /* 防止阴影效果 */
 }
 
 .mole:active,
@@ -119,7 +124,9 @@ body, html {
     border: none;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+    box-shadow: none; /* 确保点击后没有阴影 */
 }
+
 
 /* Hammer样式 */
 #hammer {
