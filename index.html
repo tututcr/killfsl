@@ -9,7 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div id="game-container">
+    <!-- 视频元素，播放开始动画 -->
+    <video id="start-movie" src="startmovie.mp4" autoplay muted></video>
+
+    <!-- 游戏容器 -->
+    <div id="game-container" class="hidden">
         <!-- 得分图案和分数显示 -->
         <img src="得分.png" id="score-label" alt="得分">
         <div id="score">0</div>
