@@ -103,10 +103,22 @@ body, html {
 /* Mole样式 */
 .mole {
     position: absolute;
-    width: 20vw; /* 100px / 1280px * 100 = 7.8125vw */
-    height: auto; /* 108px / 720px * 100 = 15vh */
+    width: 20vw;
+    height: auto;
     user-select: none;
-    cursor: pointer; /* 更改鼠标指针样式 */
+    cursor: pointer;
+
+    /* 防止出现边框和高亮 */
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mole:active,
+.mole:focus {
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Hammer样式 */
