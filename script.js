@@ -276,3 +276,17 @@ window.onload = () => {
     hideLeaderboard();
     nameModal.style.display = 'none'; // 确保姓名输入模态框隐藏
 };
+// 页面加载完成后的逻辑，确保视频播放和界面切换
+document.addEventListener('DOMContentLoaded', () => {
+    const startMovie = document.getElementById('start-movie');
+    const gameContainer = document.getElementById('game-container');
+
+    // 当视频播放结束后，隐藏视频并显示游戏界面
+    startMovie.addEventListener('ended', () => {
+        startMovie.classList.add('hidden');  // 隐藏视频
+        gameContainer.classList.remove('hidden');  // 显示游戏界面
+    });
+
+    // 如果需要在播放视频的同时加载游戏资源，可以在这里添加游戏加载逻辑
+    // 比如异步加载资源或者初始化游戏
+});
